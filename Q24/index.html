@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Highlighting Words with JavaScript</title>
+	<style>
+		.highlight {
+			background-color: yellow;
+		}
+	</style>
+</head>
+<body>
+	<p id="text">This is a sample paragraph with some words longer than eight characters.</p>
+	<script>
+		const text = document.getElementById("text");
+		const words = text.innerText.split(" ");
+
+		for (let i = 0; i < words.length; i++) {
+			if (words[i].length > 8) {
+				words[i] = "<span class='highlight'>" + words[i] + "</span>";
+			}
+		}
+
+		text.innerHTML = words.join(" ");
+	</script>
+</body>
+</html>
